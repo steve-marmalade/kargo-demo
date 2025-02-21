@@ -7,9 +7,9 @@ resources:
 
 patches:
 - target:
-    kind: Service
+    kind: Ingress
     name: kargo-demo
   patch: |-
     - op: replace
-      path: /spec/ports/0/nodePort
-      value: 30082
+      path: /spec/rules/0/host
+      value: kargo-demo-uat.next.marmalade.co

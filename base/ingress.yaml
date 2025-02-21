@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kargo-demo
+  annotations:
+    spec.ingressClassName: traefik
+spec:
+  rules:
+  - host: placeholder
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: kargo-demo
+            port:
+              number: 80
